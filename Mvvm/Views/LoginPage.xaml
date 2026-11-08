@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:views="clr-namespace:Mvvm.Views"
+             xmlns:models="clr-namespace:Mvvm.Models"
+             xmlns:vm="clr-namespace:Mvvm.ViewModels"
+             x:Class="Mvvm.Views.LoginPage"
+             x:DataType="vm:LoginPageVM"
+             Title="LoginPage">
+    <VerticalStackLayout>
+        <Label
+Text="Login Page"
+FontSize="Large"
+VerticalOptions="Center"
+HorizontalOptions="Center" />
+
+        <Border MaximumHeightRequest=" 100"
+MaximumWidthRequest=" 200"
+StrokeThickness=" 2">
+
+            <Entry
+Placeholder=" Name"
+x:Name=" nameEntry"
+Text="{Binding Name}"
+VerticalOptions="Center"
+HorizontalOptions="Center" />
+        </Border>
+
+        <Border MaximumHeightRequest=" 100"
+MaximumWidthRequest=" 200"
+StrokeThickness=" 2">
+
+            <Entry
+Placeholder=" Password"
+x:Name=" passwordEntry"
+Text="{Binding Password}"
+VerticalOptions="Center"
+HorizontalOptions="Center" />
+        </Border>
+        <Button WidthRequest=" 100"
+HeightRequest=" 50"
+Command="{Binding LoginCommand}"
+Text=" send"/>
+
+        <Label
+FontSize="Large"
+TextColor="{Binding MessageColor}"
+IsVisible ="{Binding MessageVisible}"
+Text="{Binding MessageError} "
+VerticalOptions="Center"
+HorizontalOptions="Center" />
+
+
+    </VerticalStackLayout>
+</ContentPage>
